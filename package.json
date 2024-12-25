@@ -1,0 +1,29 @@
+{
+  "name": "telegram-mcqs-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/anthropic": "^0.3.11",
+    "@langchain/core": "^0.3.26",
+    "@langchain/langgraph": "^0.2.36",
+    "@langchain/openai": "^0.3.16",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/node-telegram-bot-api": "^0.64.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "langchain": "^0.3.8",
+    "node-telegram-bot-api": "^0.66.0",
+    "openai": "^4.77.0",
+    "typescript": "^5.7.2"
+  }
+}
