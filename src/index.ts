@@ -15,7 +15,9 @@ const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY!;
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
 const WEBHOOK_URL =
-  process.env.WEBHOOK_URL || `https://moe.a.pinggy.link/telegram-webhook`;
+  process.env.NODE_ENV === "production"
+    ? process.env.WEBHOOK_URL
+    : `https://moe.a.pinggy.link/telegram-webhook`;
 
 // 1) Create Express server
 const app = express();
@@ -37,7 +39,7 @@ app.post("/telegram-webhook", (req: Request, res: Response) => {
 // 4) Configure your webhook with Telegram
 //    This is typically done once when the server starts up.
 //    Replace `YOUR_PUBLIC_DOMAIN` with your actual domain or ngrok https endpoint.
-bot.setWebHook(WEBHOOK_URL).then(() => {
+bot.setWebHook(WEBHOOK_URL || "").then(() => {
   console.log(`Telegram bot webhook set to: ${WEBHOOK_URL}`);
 });
 
