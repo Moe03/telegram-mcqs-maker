@@ -17,7 +17,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
 const WEBHOOK_URL =
   process.env.NODE_ENV === "production"
     ? process.env.WEBHOOK_URL
-    : `https://moe.a.pinggy.link/telegram-webhook`;
+    : `https://twilio.a.pinggy.link/telegram-webhook`;
 
 // 1) Create Express server
 const app = express();
