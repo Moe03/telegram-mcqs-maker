@@ -188,7 +188,7 @@ bot.on("message", async (msg: Message) => {
                     type: "quiz",
                     correct_option_id: correctOptionIndex,
                     explanation: explanation,
-                    is_anonymous: false, // or true, depending on your needs
+                    is_anonymous: true, // or true, depending on your needs
                   }
                 );
               } catch (error) {
